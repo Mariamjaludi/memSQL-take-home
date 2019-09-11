@@ -2,9 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>memSQL</title>
-    <script src="https://use.fontawesome.com/1a072db0ec.js"></script>
+
+    <script defer src="https://use.fontawesome.com/1a072db0ec.js"></script>
+    <script defer src="index.js"></script>
     <!-- <link defer rel="stylesheet" href="style.css"> -->
+    <script type="text/javascript">
+      function fn1(){
+        // var select = document.getElementById("b-size");
+        // alert(select.options[select.selectedIndex].value)
+        // var bEmail = document.getElementById("b-email").value
+        // alert("Value inside the text box is: " + bEmail)
+      }
+    </script>
+    <title>memSQL</title>
   </head>
   <body>
     <div class="navbar">
@@ -14,28 +24,29 @@
     </div>
     <h2 class="book-demo">Book a Demo</h2>
     <p>Help us customize your demo by answering the following questions below.</p>
-    <form action="index.html" >
+    <form id='my-form' action="index.html" >
       <label for="b-email">Business Email</label><br>
-      <input id="b-email" type="text" name="" value="" placeholder="Enter your business email"><br>
+      <input id="b-email" type="email" name="" placeholder="Enter your business email"><br>
       <label for="b-size">Business Size</label><br>
       <select id="b-size" class="" name="">
-        <option value="">1-10</option>
-        <option value="">11-15</option>
-        <option value="">51-100</option>
-        <option value="">101-250</option>
-        <option value="">250-1000</option>
-        <option value="">1000+</option>
+        <option value="" disabled selected hidden>Select Size</option>
+        <option value="1-10">1-10</option>
+        <option value="11-15">11-15</option>
+        <option value="51-100">51-100</option>
+        <option value="101-250">101-250</option>
+        <option value="250-1000">250-1000</option>
+        <option value="1000+">1000+</option>
       </select><br>
       <label for="">What is the most important thing to you in a solution?</label><br>
-      <input id="rd1" type="radio" name="r-group" value="">Real-time Analytics</input>
-      <input id="rd2" type="radio" name="r-group" value="">Scalability</input><br>
-      <input id="rd3" type="radio" name="r-group" value="">Query Response Time</input>
-      <input id="rd4" type="radio" name="r-group" value="">Document Storage</input><br>
-      <input id="rd5" type="radio" name="r-group" value="">High Concurrency</input>
-      <input id="rd6" type="radio" name="r-group" value="">Full Text Search</input><br>
-      <input id="rd7" type="radio" name="r-group" value="">Fast Data Ingest</input>
-      <input id="rd8" type="radio" name="r-group" value="">Price</input><br>
-      <button type="submit">Continue to Schedule a Time</button>
+      <input id="rd1" type="radio" name="r-group" value="Real-time Analytics">Real-time Analytics</input>
+      <input id="rd2" type="radio" name="r-group" value="Scalability">Scalability</input><br>
+      <input id="rd3" type="radio" name="r-group" value="Query Response Time">Query Response Time</input>
+      <input id="rd4" type="radio" name="r-group" value="Document Storage">Document Storage</input><br>
+      <input id="rd5" type="radio" name="r-group" value="High Concurrency">High Concurrency</input>
+      <input id="rd6" type="radio" name="r-group" value="Full Text Search">Full Text Search</input><br>
+      <input id="rd7" type="radio" name="r-group" value="Fast Data Ingest">Fast Data Ingest</input>
+      <input id="rd8" type="radio" name="r-group" value="Price">Price</input><br>
+      <button type="submit">Continue to Schedule a Time →</button>
     </form>
   </body>
 
