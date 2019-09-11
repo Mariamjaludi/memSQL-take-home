@@ -1,11 +1,16 @@
-const formEl = document.querySelector("#my-form")
+const formEl = document.querySelector("#my-form");
 
 //function to redirect page after form is submitted
-function redirecting(bSize, importanceIndicator){
-  if (bSize == "1-10" || importanceIndicator == "Document Storage" || importanceIndicator == "Full Text Search" || importanceIndicator == "Price"){
-    window.location.href = "/unqualifiedLead.html"
-  } else{
-    window.location.href = "/qualifiedLead.html"
+function redirecting(bSize, importanceIndicator) {
+  if (
+    bSize == "1-10" ||
+    importanceIndicator == "Document Storage" ||
+    importanceIndicator == "Full Text Search" ||
+    importanceIndicator == "Price"
+  ) {
+    window.location.href = "/unqualifiedLead.html";
+  } else {
+    window.location.href = "/qualifiedLead.html";
   }
 }
 
@@ -31,17 +36,19 @@ formEl.addEventListener("submit", e => {
   const importanceIndicator = checkedRdEl[0].value;
 
   //regex to check if email is valid format
-  let validEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+  let validEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   //regex to check if email is gmail, hotmail, or yahoo
-  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(email)
-  let qualified = false
-  // if (validEmailFormat && !personalEmail){
-  //
-  //   alert("email is valid")
-  // } else {
-  //   alert("email is not valid")
-  // }
+  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(
+    email
+  );
 
-  redirecting(bSize, importanceIndicator);
-
+  if (validEmailFormat && !personalEmail && bSize && importanceIndicator) {
+    redirecting(bSize, importanceIndicator);
+  } else if (!validEmailFormat || personalEmail) {
+    // add code to change css to email error
+  } else if (!bSize) {
+    // add code to change css to no size selected error
+  } else if (!importanceIndicator) {
+    // add code to change css to no size selected error
+  }
 });
