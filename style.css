@@ -1,5 +1,6 @@
 body {
   background: #E5E5E5;
+  /* text-align: center; */
 }
 
 .navbar {
@@ -11,6 +12,20 @@ body {
   bottom: 0%;
   background: #1B1A21;
   opacity: 0.88;
+  display: grid;
+  grid-template-columns: 183.72px 840.28px;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "logo div";
+}
+
+.navbar .logo {
+  grid-area: logo;
+  padding: 29.25px 24px 29.25px 24px;
+}
+
+.navbar .nav-div{
+  grid-area: div
 }
 
 .ellipse4{
@@ -21,6 +36,17 @@ body {
   top: 160px;
   border-radius: 50%;
   background: #F9EDFF;
+  text-align: center;
+}
+
+.ellipse4 i{
+  position: relative;
+  vertical-align: middle;
+  background: linear-gradient(180deg, #AA00FF 0%, #00A3D7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 27px;
+  padding-bottom: 29px;
 }
 
 .book-demo{
