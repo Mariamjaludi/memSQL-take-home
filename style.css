@@ -100,13 +100,26 @@ h2{
 }
 
 .my-form{
-  text-align: center;
+  text-align: left;
   grid-area: form;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "email-group"
+  "select-group"
+  "rd-group"
+  "btn-div"
 }
 
 .e-lbl{
   grid-area: email-lbl;
   font-size: 13px;
+
+}
+
+.email-group{
+  grid-area: email-group;
 }
 
 #b-email{
@@ -115,8 +128,10 @@ h2{
   border: none;
   grid-area: email;
   height: 32px;
-  width: 400px;
-  text-indent: 10px;
+  width: 100%;
+  text-indent: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 #b-email:focus {
@@ -128,25 +143,32 @@ h2{
 
 .s-lbl{
   font-size: 13px;
+
 }
 
 .s-select{
   height: 32px;
-  width: 400px;
+  width: 100%;
   box-shadow: none;
   cursor: pointer;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
-.rd-label{
-  font-size: 13px;
+.select-group{
+  grid-area: select-group;
 }
+
+
 
 .rd-group{
+  grid-area: rd-group;
   text-align:justify;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
+  "rd-lbl rd-lbl"
   "rd1 rd2"
   "rd3 rd4"
   "rd5 rd6"
@@ -155,6 +177,13 @@ h2{
 
 .rd-group input {
   cursor: pointer;
+}
+
+.rd-label{
+  font-size: 13px;
+  grid-area: rd-lbl;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .rd-container {
@@ -181,7 +210,6 @@ h2{
 }
 
 .custom-radio {
-  position: absolute;
   position: absolute;
   width: 16px;
   height: 16px;
@@ -244,6 +272,9 @@ h2{
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-area: btn-div;
+  margin-bottom: 100px;
+  margin-top: 10px;
 }
 
 button{
@@ -258,6 +289,7 @@ button{
   align-items: center;
   text-align: center;
   color: #FFFFFF;
+  padding: 10px 16px;
 }
 
 button:hover,button:focus{
