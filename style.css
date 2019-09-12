@@ -38,10 +38,11 @@ body {
 .container{
   padding-left: 312px;
   padding-right: 312px;
+  /* height: 920px; */
   grid-area: container;
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 400;
   grid-template-rows: auto;
   grid-template-areas:
   "circle"
@@ -128,7 +129,7 @@ h2{
 #b-email{
   background: #F3F3F5;
   border-radius: 4px;
-  border: none;
+  border: 1px solid transparent;
   grid-area: email;
   height: 32px;
   width: 100%;
@@ -310,13 +311,6 @@ select{
   border-radius: 4px;
 }
 
-.error-msg{
-  visibility: hidden;
-  color: #C41337;
-  font-size: 12px;
-  line-height: 16px;
-}
-
 h3{
   font-size: 24px;
   line-height: 36px;
@@ -332,4 +326,45 @@ h3{
   font-weight: normal;
   line-height: 26px;
   color: #4C4A57;
+}
+
+.input-field-wrapper{
+  position:relative;
+}
+
+.input-field-wrapper i{
+  color: #00873F;
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+
+.input-field-wrapper i.visible{
+  display: block;
+}
+
+#b-email.success{
+  border: 1px solid #00873F;
+}
+
+#b-email.fail{
+  border: 1px solid #C41337;
+}
+
+.error-msg{
+  display: none;
+  color: #C41337;
+  font-size: 12px;
+  line-height: 16px;
+}
+.error-msg.visible{
+  display: block;
+}
+
+i.fa-exclamation-triangle{
+  display: block;
+  color: #C41337;
 }

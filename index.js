@@ -11,13 +11,26 @@ function checkEmail(){
     email)
 
   const errorMsgEl = document.querySelector(".error-msg")
+  const i = document.querySelector(".input-field-wrapper i");
   if (!validEmailFormat || personalEmail){
-    emailEl.style = "border: 1px solid #C41337"
-    //add error message
-    errorMsgEl.style = "visibility: visible"
-  } else {
-    emailEl.style = "border: 1px solid #00873F"
-    errorMsgEl.style = "visibility: hidden"
+    emailEl.classList.remove("success")
+    i.classList.remove("visible");
+    emailEl.classList.toggle("fail");
+    errorMsgEl.classList.toggle("visible")
+    i.classList.remove("fa-check-circle")
+    i.classList.add("fa-exclamation-triangle");
+
+  } else if (email.trim() == ""){
+    emailEl.classList.remove("success")
+    i.classList.remove("visible");
+    errorMsgEl.classList.remove("visible")
+    emailEl.classList.remove("fail")
+  }
+  else {
+    emailEl.classList.remove("fail")
+    emailEl.classList.toggle("success");
+    i.classList.toggle("visible");
+    errorMsgEl.classList.remove("visible")
   }
 }
 
