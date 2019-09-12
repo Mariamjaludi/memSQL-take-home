@@ -22,11 +22,14 @@ function styleEmail(emailIsValid){
     i.classList.remove("fa-exclamation-triangle");
     emailEl.classList.add("success");
     i.classList.add("fa-check-circle");
+
+    errorMsgEl.classList.remove("visible")
   } else {
     emailEl.classList.remove("success");
     i.classList.remove("fa-check-circle");
     emailEl.classList.add("fail");
     i.classList.add("fa-exclamation-triangle");
+    errorMsgEl.classList.add("visible")
   }
 }
 
