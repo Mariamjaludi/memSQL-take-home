@@ -12,7 +12,6 @@ body {
 
 .navbar {
   grid-area: navbar;
-  /* position: absolute; */
   height: 80px;
   left: 0%;
   right: 0%;
@@ -37,6 +36,8 @@ body {
 }
 
 .container{
+  padding-left: 312px;
+  padding-right: 312px;
   grid-area: container;
   text-align: center;
   display: grid;
@@ -56,13 +57,10 @@ body {
   height: 120px;
 }
 .ellipse4{
-  /* position: absolute; */
   margin-top: 80px;
   display: inline-block;
   width: 120px;
   height: 120px;
-  /* left: 452px; */
-  /* top: 160px; */
   border-radius: 50%;
   background: #F9EDFF;
   text-align: center;
@@ -89,44 +87,39 @@ h2{
   font-weight: bold;
   font-size: 34px;
   line-height: 42px;
-/* identical to box height, or 124% */
   text-align: center;
 }
 
 .meta-txt{
   grid-area: p;
+  color: #777582;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
 }
 
 .my-form{
+  text-align: center;
   grid-area: form;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-  "email-lbl"
-  "email"
-  "size-lbl"
-  "select"
-  "radio-lbl"
-  "rd-group"
-  "button"
 }
 
 .e-lbl{
   grid-area: email-lbl;
   font-size: 13px;
 }
-.b-email{
-  /* position: absolute; */
+
+#b-email{
   background: #F3F3F5;
   border-radius: 4px;
   border: none;
   grid-area: email;
   height: 32px;
   width: 400px;
+  text-indent: 10px;
 }
 
-.b-email:focus {
+#b-email:focus {
   background-color: #FFFFFF;
   outline: none;
   border: 1px solid #C550FF;
@@ -134,26 +127,21 @@ h2{
 }
 
 .s-lbl{
-  grid-area: size-lbl;
   font-size: 13px;
 }
 
 .s-select{
-  grid-area: select;
   height: 32px;
   width: 400px;
   box-shadow: none;
   cursor: pointer;
-  /* -webkit-appearance: none; */
 }
 
 .rd-label{
-  grid-area: radio-lbl;
   font-size: 13px;
 }
 
 .rd-group{
-  grid-area: rd-group;
   text-align:justify;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -173,9 +161,7 @@ h2{
   display: block;
   position: relative;
   padding-left: 25px;
-  /* margin-bottom: 12px; */
   cursor: pointer;
-  /* font-size: 22px; */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -258,8 +244,6 @@ h2{
   grid-area: button;
 }
 
-
-
 button{
   background: #8800CC;
   border-radius: 4px;
@@ -281,25 +265,6 @@ button:hover,button:focus{
 
 button:focus, select:focus{
   outline: none;
-}
-
-
-
-p{
-  /* position: absolute;
-  width: 400px;
-  height: 52px;
-  left: 312px;
-  top: 373px;
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 26px; */
-  /* or 162% */
-  /* text-align: center; */
-  /* Neutral/700 */
-  /* color: #777582; */
 }
 
 

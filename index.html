@@ -24,8 +24,12 @@
     <h2 class="book-demo">Book a Demo</h2>
     <p class="meta-txt">Help us customize your demo by answering the following questions below.</p>
     <form class='my-form' action="/">
-      <label class="e-lbl" for="b-email">Business Email</label>
-      <input required class="b-email" id="b-email" type="text" name="" placeholder="Enter your business email">
+      
+      <div class="email-input">
+        <label class="e-lbl" for="b-email">Business Email</label>
+        <input required class="input-field" id="b-email" type="text" placeholder="Enter your business email">
+      </div>
+
       <label class="s-lbl" for="b-size">Business Size</label>
       <select id="b-size" class="s-select" name="">
         <option value="" disabled selected hidden>Select Size</option>
@@ -36,6 +40,7 @@
         <option value="250-1000">250-1000</option>
         <option value="1000+">1000+</option>
       </select>
+
       <label class="rd-label" for="">What is the most important thing to you in a solution?</label><br>
       <div class="rd-group">
         <label class="rd-container rd1">Real-time Analytics
