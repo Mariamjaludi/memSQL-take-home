@@ -114,6 +114,7 @@ h2{
 
 .e-lbl{
   grid-area: email-lbl;
+  font-size: 13px;
 }
 .b-email{
   /* position: absolute; */
@@ -127,34 +128,130 @@ h2{
 
 .s-lbl{
   grid-area: size-lbl;
+  font-size: 13px;
 }
 
 .s-select{
   grid-area: select;
   height: 32px;
   width: 400px;
+  box-shadow: none;
+  cursor: pointer;
+  /* -webkit-appearance: none; */
 }
 
-.rd-lbl{
+.rd-label{
   grid-area: radio-lbl;
+  font-size: 13px;
 }
 
 .rd-group{
   grid-area: rd-group;
   text-align:justify;
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   grid-template-areas:
   "rd1 rd2"
   "rd3 rd4"
   "rd5 rd6"
-  "rd rd8";
+  "rd7 rd8";
+}
+
+.rd-group input {
+  cursor: pointer;
+}
+
+.rd-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  /* margin-bottom: 12px; */
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.rd-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-radio {
+  position: absolute;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 0px;
+  top: 0px;
+  background-color: transparent;
+  border: 1px solid #777582;
+  border-radius: 64px;
+}
+
+.rd-container input:checked ~ .custom-radio {
+  background-color: #8800CC;
+}
+
+.custom-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .custom-radio:after {
+  display: block;
+}
+
+.rd-container .custom-radio:after {
+  width: 6px;
+  height: 6px;
+  left: 5px;
+  top: 5px;
+  border-radius: 64px;
+  background: #FFFFFF;
+}
+
+.rd1{
+  grid-area: rd1;
+}
+.rd2{
+  grid-area: rd2;
+}
+.rd3{
+  grid-area: rd3;
+}
+.rd4{
+  grid-area: rd4;
+}
+.rd5{
+  grid-area: rd5;
+}
+.rd6{
+  grid-area: rd6;
+}
+.rd7{
+  grid-area: rd7;
+}
+.rd8{
+  grid-area: rd8;
 }
 
 .btn-div{
   grid-area: button;
 }
+
+
 
 button{
 
