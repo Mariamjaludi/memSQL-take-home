@@ -126,6 +126,12 @@ h2{
   width: 400px;
 }
 
+.b-email:focus {
+  outline: none;
+  border: 1px solid #C550FF;
+  border-radius: 4px;
+}
+
 .s-lbl{
   grid-area: size-lbl;
   font-size: 13px;
@@ -254,8 +260,7 @@ h2{
 
 
 button{
-
-  /* background: #8800CC;
+  background: #8800CC;
   border-radius: 4px;
   font-family: Lato;
   font-style: normal;
@@ -265,8 +270,19 @@ button{
   display: flex;
   align-items: center;
   text-align: center;
-  color: #FFFFFF; */
+  color: #FFFFFF;
 }
+
+button:hover,button:focus{
+  background-color: #AA00FF;
+  /* border: none; */
+}
+
+button:focus, select:focus{
+  outline: none;
+}
+
+
 
 p{
   /* position: absolute;

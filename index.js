@@ -1,4 +1,4 @@
-const formEl = document.querySelector("#my-form");
+const formEl = document.querySelector(".my-form");
 
 //function to redirect page after form is submitted
 function redirecting(bSize, importanceIndicator) {
