@@ -138,6 +138,7 @@ h2{
   margin-top: 6px;
   margin-bottom: 6px;
   outline: none;
+  font-size: 14px;
 }
 
 #b-email:focus {
