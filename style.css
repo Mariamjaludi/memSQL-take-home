@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Lato;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 80px auto;
@@ -92,27 +93,36 @@ h2{
   text-align: center;
 }
 
-.my-form{
-  grid-area: form;
-}
-
-.b-email{
-  /* position: absolute; */
-  background: #F3F3F5;
-  border-radius: 4px;
-  border: none;
-}
-
 .meta-txt{
   grid-area: p;
+}
+
+.my-form{
+  grid-area: form;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "email-lbl"
+  "email"
+  "size-lbl"
+  "select"
+  "radio-lbl"
+  "rd-group"
+  "button"
 }
 
 .e-lbl{
   grid-area: email-lbl;
 }
-
 .b-email{
+  /* position: absolute; */
+  background: #F3F3F5;
+  border-radius: 4px;
+  border: none;
   grid-area: email;
+  height: 32px;
+  width: 400px;
 }
 
 .s-lbl{
@@ -121,10 +131,25 @@ h2{
 
 .s-select{
   grid-area: select;
+  height: 32px;
+  width: 400px;
 }
 
 .rd-lbl{
   grid-area: radio-lbl;
+}
+
+.rd-group{
+  grid-area: rd-group;
+  text-align:justify;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "rd1 rd2"
+  "rd3 rd4"
+  "rd5 rd6"
+  "rd rd8";
 }
 
 .btn-div{
