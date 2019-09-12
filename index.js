@@ -1,5 +1,6 @@
 const formEl = document.querySelector(".my-form");
 const emailEl = document.querySelector("#b-email");
+
 //function to check Email
 function checkEmail(){
   const email = emailEl.value
@@ -8,13 +9,18 @@ function checkEmail(){
   //regex to check if email is gmail, hotmail, or yahoo
   let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(
     email)
+
+  const errorMsgEl = document.querySelector(".error-msg")
   if (!validEmailFormat || personalEmail){
     emailEl.style = "border: 1px solid #C41337"
     //add error message
+    errorMsgEl.style = "visibility: visible"
   } else {
     emailEl.style = "border: 1px solid #00873F"
+    errorMsgEl.style = "visibility: hidden"
   }
 }
+
 //function to redirect page after form is submitted
 function redirecting(bSize, importanceIndicator) {
   if (
