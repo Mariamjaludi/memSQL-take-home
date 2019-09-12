@@ -1,11 +1,17 @@
 # memSQL Take Home
 
+#### Starting Application:
+
+Application was tested and run using python -m SimpleHTTPServer
+
 #### Deliverables
+
 Build a standalone prototype web page in
 HTML/CSS/Javascript. The design along with component interactions and logical flow is in the
 provided design file on Figma.
 
 ### Allowed Third Party Libraries
+
 1. jQuery (no plugins)
 2. Font Awesome
 3. Google Fonts
@@ -48,7 +54,7 @@ All of the icons in the design are from Font Awesome which you are allowed to us
 The only other image in the design is the logo which you can download from https://brandfolder.com/memsql. The one you want is the SVG.
 Everything else should be done with CSS.
 
-#### Submission 
+#### Submission
 To submit your result please package up all relevant files into either a ZIP or TAR file and send it through Greenhouse via the provided link in the email.
 The submission should include an index.html file which should open in a web-browser running from the local filesystem. All paths to other files should be relative. The html may load Font Awesome and jQuery from a CDN rather than vendoring them locally.
 The submission should run correctly in a recent version of Chrome and Firefox. Other browsers will not be tested.
