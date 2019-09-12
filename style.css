@@ -136,13 +136,22 @@ h2{
   text-indent: 12px;
   margin-top: 6px;
   margin-bottom: 6px;
+  outline: none;
 }
 
 #b-email:focus {
   background-color: #FFFFFF;
-  outline: none;
   border: 1px solid #C550FF;
   border-radius: 4px;
+}
+
+#b-email.success{
+  border: 1px solid #00873F;
+}
+
+#b-email.fail{
+  border: 1px solid #C41337;
+  outline: none;
 }
 
 .s-lbl{
@@ -295,6 +304,7 @@ button{
   text-align: center;
   color: #FFFFFF;
   padding: 10px 16px;
+  cursor: pointer;
 }
 
 button:hover,button:focus{
@@ -346,13 +356,7 @@ h3{
   display: block;
 }
 
-#b-email.success{
-  border: 1px solid #00873F;
-}
 
-#b-email.fail{
-  border: 1px solid #C41337;
-}
 
 .error-msg{
   display: none;

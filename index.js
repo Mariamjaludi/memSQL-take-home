@@ -1,7 +1,7 @@
 const formEl = document.querySelector(".my-form");
 const emailEl = document.querySelector("#b-email");
 
-//function to check Email
+//function to check email syntax
 function checkEmail(){
   const email = emailEl.value
   //regex to check if email is valid format
@@ -9,28 +9,24 @@ function checkEmail(){
   //regex to check if email is gmail, hotmail, or yahoo
   let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(
     email)
+  return (!validEmailFormat || personalEmail || email.trim() == "" ? false : true);
+}
 
+// function to style email input after validation
+function styleEmail(emailIsValid){
   const errorMsgEl = document.querySelector(".error-msg")
   const i = document.querySelector(".input-field-wrapper i");
-  if (!validEmailFormat || personalEmail){
-    emailEl.classList.remove("success")
-    i.classList.remove("visible");
-    emailEl.classList.toggle("fail");
-    errorMsgEl.classList.toggle("visible")
-    i.classList.remove("fa-check-circle")
+  i.classList.add("visible");
+  if (emailIsValid){
+    emailEl.classList.remove("fail");
+    i.classList.remove("fa-exclamation-triangle");
+    emailEl.classList.add("success");
+    i.classList.add("fa-check-circle");
+  } else {
+    emailEl.classList.remove("success");
+    i.classList.remove("fa-check-circle");
+    emailEl.classList.add("fail");
     i.classList.add("fa-exclamation-triangle");
-
-  } else if (email.trim() == ""){
-    emailEl.classList.remove("success")
-    i.classList.remove("visible");
-    errorMsgEl.classList.remove("visible")
-    emailEl.classList.remove("fail")
-  }
-  else {
-    emailEl.classList.remove("fail")
-    emailEl.classList.toggle("success");
-    i.classList.toggle("visible");
-    errorMsgEl.classList.remove("visible")
   }
 }
 
@@ -48,12 +44,15 @@ function redirecting(bSize, importanceIndicator) {
   }
 }
 
-emailEl.addEventListener("change", e => checkEmail())
+emailEl.addEventListener("change", e => {
+  let emailIsValid = checkEmail();
+  styleEmail(emailIsValid);
+})
 
 formEl.addEventListener("submit", e => {
   e.preventDefault();
-  // get form values
 
+  // get form values
   const email = document.querySelector("#b-email").value;
   const bSizeEl = document.getElementById("b-size");
   const bSize = bSizeEl.options[bSizeEl.selectedIndex].value;
@@ -71,20 +70,10 @@ formEl.addEventListener("submit", e => {
   // get checked element
   let checkedRdEl = rdEls.filter(rdEl => rdEl.checked == true);
   const importanceIndicator = checkedRdEl[0].value;
+  // check if email is valid
+  let emailIsValid = checkEmail();
 
-  //regex to check if email is valid format
-  let validEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  //regex to check if email is gmail, hotmail, or yahoo
-  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(email);
-
-  if (validEmailFormat && !personalEmail && bSize && importanceIndicator) {
+  if (emailIsValid && bSize && importanceIndicator) {
     redirecting(bSize, importanceIndicator);
-  } else if (!validEmailFormat || personalEmail) {
-    // add code to change css to email error
-    emailEl.style = "border: 1px solid #C41337"
-  } else if (!bSize) {
-    // add code to change css to no size selected error
-  } else if (!importanceIndicator) {
-    // add code to change css to no size selected error
   }
 });
