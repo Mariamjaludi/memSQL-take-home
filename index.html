@@ -6,6 +6,7 @@
   <script defer src="index.js"></script>
   <link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <script src="https://use.fontawesome.com/1a072db0ec.js"></script>
   <link defer rel="stylesheet" href="style.css">
   <title>memSQL</title>
 </head>
@@ -36,18 +37,19 @@
         </div>
       </div>
       <div class="select-group">
-      <label class="s-lbl" for="b-size">Business Size</label>
-      <select id="b-size" class="s-select" name="">
-        <option value="" disabled selected hidden>Select Size</option>
-        <option value="1-10">1-10</option>
-        <option value="11-15">11-15</option>
-        <option value="51-100">51-100</option>
-        <option value="101-250">101-250</option>
-        <option value="250-1000">250-1000</option>
-        <option value="1000+">1000+</option>
-      </select>
+        <label class="s-lbl" for="b-size">Business Size</label>
+        <div class="custom-select" style="width:100%;">
+          <select id="b-size">
+            <option value="" disabled selected >Select Size</option>
+            <option value="1-10">1-10</option>
+            <option value="11-15">11-15</option>
+            <option value="51-100">51-100</option>
+            <option value="101-250">101-250</option>
+            <option value="250-1000">250-1000</option>
+            <option value="1000+">1000+</option>
+          </select>
+        </div>
       </div>
-
 
       <div class="rd-group">
         <label class="rd-label" for="">What is the most important thing to you in a solution?</label>
