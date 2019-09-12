@@ -1,5 +1,20 @@
 const formEl = document.querySelector(".my-form");
-
+const emailEl = document.querySelector("#b-email");
+//function to check Email
+function checkEmail(){
+  const email = emailEl.value
+  //regex to check if email is valid format
+  let validEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  //regex to check if email is gmail, hotmail, or yahoo
+  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(
+    email)
+  if (!validEmailFormat || personalEmail){
+    emailEl.style = "border: 1px solid #C41337"
+    //add error message
+  } else {
+    emailEl.style = "border: 1px solid #00873F"
+  }
+}
 //function to redirect page after form is submitted
 function redirecting(bSize, importanceIndicator) {
   if (
@@ -14,9 +29,12 @@ function redirecting(bSize, importanceIndicator) {
   }
 }
 
+emailEl.addEventListener("change", e => checkEmail())
+
 formEl.addEventListener("submit", e => {
   e.preventDefault();
   // get form values
+
   const email = document.querySelector("#b-email").value;
   const bSizeEl = document.getElementById("b-size");
   const bSize = bSizeEl.options[bSizeEl.selectedIndex].value;
@@ -38,14 +56,13 @@ formEl.addEventListener("submit", e => {
   //regex to check if email is valid format
   let validEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   //regex to check if email is gmail, hotmail, or yahoo
-  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(
-    email
-  );
+  let personalEmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@(gmail|hotmail|yahoo|)([\.])com/g.test(email);
 
   if (validEmailFormat && !personalEmail && bSize && importanceIndicator) {
     redirecting(bSize, importanceIndicator);
   } else if (!validEmailFormat || personalEmail) {
     // add code to change css to email error
+    emailEl.style = "border: 1px solid #C41337"
   } else if (!bSize) {
     // add code to change css to no size selected error
   } else if (!importanceIndicator) {

@@ -127,6 +127,7 @@ h2{
 }
 
 .b-email:focus {
+  background-color: #FFFFFF;
   outline: none;
   border: 1px solid #C550FF;
   border-radius: 4px;
