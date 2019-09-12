@@ -1,10 +1,17 @@
 body {
-  background: #E5E5E5;
-  /* text-align: center; */
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px auto;
+  grid-template-areas:
+  "navbar"
+  "container";
 }
 
 .navbar {
-  position: absolute;
+  grid-area: navbar;
+  /* position: absolute; */
   height: 80px;
   left: 0%;
   right: 0%;
@@ -28,12 +35,33 @@ body {
   grid-area: div
 }
 
-.ellipse4{
-  position: absolute;
+.container{
+  grid-area: container;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "circle"
+  "b-demo"
+  "p"
+  "form";
+}
+
+.elipse-wrapper{
+  text-align: center;
+  grid-area: circle;
   width: 120px;
   height: 120px;
-  left: 452px;
-  top: 160px;
+}
+.ellipse4{
+  /* position: absolute; */
+  margin-top: 80px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  /* left: 452px; */
+  /* top: 160px; */
   border-radius: 50%;
   background: #F9EDFF;
   text-align: center;
@@ -50,11 +78,8 @@ body {
 }
 
 .book-demo{
-  position: absolute;
-  width: 205px;
-  height: 42px;
-  left: 408px;
-  top: 320px;
+  grid-area: b-demo;
+
 }
 
 h2{
@@ -67,15 +92,48 @@ h2{
   text-align: center;
 }
 
-#b-email{
+.my-form{
+  grid-area: form;
+}
+
+.b-email{
+  /* position: absolute; */
   background: #F3F3F5;
   border-radius: 4px;
   border: none;
 }
 
+.meta-txt{
+  grid-area: p;
+}
+
+.e-lbl{
+  grid-area: email-lbl;
+}
+
+.b-email{
+  grid-area: email;
+}
+
+.s-lbl{
+  grid-area: size-lbl;
+}
+
+.s-select{
+  grid-area: select;
+}
+
+.rd-lbl{
+  grid-area: radio-lbl;
+}
+
+.btn-div{
+  grid-area: button;
+}
 
 button{
-  background: #8800CC;
+
+  /* background: #8800CC;
   border-radius: 4px;
   font-family: Lato;
   font-style: normal;
@@ -85,11 +143,11 @@ button{
   display: flex;
   align-items: center;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF; */
 }
 
 p{
-  position: absolute;
+  /* position: absolute;
   width: 400px;
   height: 52px;
   left: 312px;
@@ -98,12 +156,13 @@ p{
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 26px; */
   /* or 162% */
-  text-align: center;
+  /* text-align: center; */
   /* Neutral/700 */
-  color: #777582;
+  /* color: #777582; */
 }
+
 
 select{
   background: #F3F3F5;

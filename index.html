@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <script defer src="index.js"></script>
-    <link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
-    <link defer rel="stylesheet" href="style.css">
-    <title>memSQL</title>
-  </head>
-  <body>
-    <div class="navbar">
-      <img class="logo" src="memsql_logo.svg" alt="">
-      <div class="nav-div"></div>
-    </div>
-    <div class="ellipse4">
-      <i class="far fa-calendar-alt fa-4x"></i>
-    </div>
 
+<head>
+  <meta charset="utf-8">
+  <script defer src="index.js"></script>
+  <link href="fontawesome-free-5.10.2-web/css/all.css" rel="stylesheet">
+  <link defer rel="stylesheet" href="style.css">
+  <title>memSQL</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <img class="logo" src="memsql_logo.svg" alt="">
+    <div class="nav-div"></div>
+  </div>
+  <div class="container">
+    <div class="ellipse-wrapper">
+      <div class="ellipse4">
+        <i class="far fa-calendar-alt fa-4x"></i>
+      </div>
+    </div>
     <h2 class="book-demo">Book a Demo</h2>
-    <p>Help us customize your demo by answering the following questions below.</p>
-    <form id='my-form' action="/" >
-      <label for="b-email">Business Email</label><br>
-      <input required id="b-email" type="text" name="" placeholder="Enter your business email"><br>
-      <label for="b-size">Business Size</label><br>
-      <select id="b-size" class="" name="">
+    <p class="meta-txt">Help us customize your demo by answering the following questions below.</p>
+    <form class='my-form' action="/">
+      <label class="e-lbl" for="b-email">Business Email</label>
+      <input required class="b-email" id="b-email" type="text" name="" placeholder="Enter your business email">
+      <label class="s-lbl" for="b-size">Business Size</label>
+      <select id="b-size" class="s-select" name="">
         <option value="" disabled selected hidden>Select Size</option>
         <option value="1-10">1-10</option>
         <option value="11-15">11-15</option>
@@ -30,18 +34,21 @@
         <option value="101-250">101-250</option>
         <option value="250-1000">250-1000</option>
         <option value="1000+">1000+</option>
-      </select><br>
-      <label for="">What is the most important thing to you in a solution?</label><br>
-      <input id="rd1" type="radio" name="r-group" value="Real-time Analytics">Real-time Analytics</input>
-      <input id="rd2" type="radio" name="r-group" value="Scalability">Scalability</input><br>
-      <input id="rd3" type="radio" name="r-group" value="Query Response Time">Query Response Time</input>
-      <input id="rd4" type="radio" name="r-group" value="Document Storage">Document Storage</input><br>
-      <input id="rd5" type="radio" name="r-group" value="High Concurrency">High Concurrency</input>
-      <input id="rd6" type="radio" name="r-group" value="Full Text Search">Full Text Search</input><br>
-      <input id="rd7" type="radio" name="r-group" value="Fast Data Ingest">Fast Data Ingest</input>
-      <input id="rd8" type="radio" name="r-group" value="Price">Price</input><br>
-      <button type="submit">Continue to Schedule a Time →</button>
+      </select>
+      <label class="rd-label" for="">What is the most important thing to you in a solution?</label><br>
+      <div class="rd-group">
+        <input id="rd1" type="radio" name="r-group" value="Real-time Analytics">Real-time Analytics</input>
+        <input id="rd2" type="radio" name="r-group" value="Scalability">Scalability</input><br>
+        <input id="rd3" type="radio" name="r-group" value="Query Response Time">Query Response Time</input>
+        <input id="rd4" type="radio" name="r-group" value="Document Storage">Document Storage</input><br>
+        <input id="rd5" type="radio" name="r-group" value="High Concurrency">High Concurrency</input>
+        <input id="rd6" type="radio" name="r-group" value="Full Text Search">Full Text Search</input><br>
+        <input id="rd7" type="radio" name="r-group" value="Fast Data Ingest">Fast Data Ingest</input>
+        <input id="rd8" type="radio" name="r-group" value="Price">Price</input><br>
+      </div>
+      <div class="btn-div"><button type="submit">Continue to Schedule a Time →</button></div>
     </form>
-  </body>
+  </div>
+</body>
 
 </html>
