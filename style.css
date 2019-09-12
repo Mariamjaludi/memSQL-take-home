@@ -241,7 +241,9 @@ h2{
 }
 
 .btn-div{
-  grid-area: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button{
@@ -260,13 +262,11 @@ button{
 
 button:hover,button:focus{
   background-color: #AA00FF;
-  /* border: none; */
 }
 
 button:focus, select:focus{
   outline: none;
 }
-
 
 select{
   background: #F3F3F5;
