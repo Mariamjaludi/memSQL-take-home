@@ -83,7 +83,7 @@ formEl.addEventListener("submit", e => {
 
 
 
-// dropdown JS
+// ************************** dropdown JS **********************************
 
 let x, i, j, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
